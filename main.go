@@ -19,6 +19,7 @@ func main() {
 	if err != nil {
 		log.Fatal("Opening file:", err)
 	}
+	defer f.Close()
 
 	c := csv.NewReader(f)
 	r, err := c.ReadAll()
